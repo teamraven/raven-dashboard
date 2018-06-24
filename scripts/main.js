@@ -92,35 +92,24 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
   var uid = firebase.auth().currentUser.uid;
 
   var html =
-      '<div class="post post-' + postId + ' mdl-cell mdl-cell--12-col ' +
-                  'mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-grid mdl-grid--no-spacing">' +
-        '<div class="mdl-card mdl-shadow--2dp">' +
-          '<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">' +
-            '<h4 class="mdl-card__title-text"></h4>' +
-          '</div>' +
-          '<div class="header">' +
-            '<div>' +
-              '<div class="avatar"></div>' +
-              '<div class="username mdl-color-text--black"></div>' +
-            '</div>' +
-          '</div>' +
+      
           '<div class="text"></div>' +
           '<div class="comments-container"></div>' +
           '<form class="add-comment" action="#">' +
             '<div class="mdl-textfield mdl-js-textfield">' +
               '<input class="mdl-textfield__input new-comment" type="text">' +
-              '<label class="mdl-textfield__label">Comment...</label>' +
+              '<label class="mdl-textfield__label"></label>' +
             '</div>' +
-          '</form>' +
-        '</div>' +
-      '</div>';
+          '</form>';
+       
 
   // Create the DOM element from the HTML.
   var div = document.createElement('div');
   div.innerHTML = html;
-  var postElement = div.firstChild;
+ // var postElement = div.firstChild;
+   var postElement = div;
   if (componentHandler) {
-    componentHandler.upgradeElements(postElement.getElementsByClassName('mdl-textfield')[0]);
+   // componentHandler.upgradeElements(postElement.getElementsByClassName('mdl-textfield')[0]);
   }
 
   var addCommentForm = postElement.getElementsByClassName('add-comment')[0];
@@ -130,10 +119,10 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
 
   // Set values.
   postElement.getElementsByClassName('text')[0].innerText = text;
-  postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
-  postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
-  postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
-      (authorPic || './silhouette.jpg') + '")';
+ // postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
+ // postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
+ // postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
+    //  (authorPic || './silhouette.jpg') + '")';
 
   // Listen for comments.
   // [START child_event_listener_recycler]
@@ -306,13 +295,13 @@ function startDatabaseQueries() {
     var dataObj = data.val();
       var author = "user1" || 'Anonymous';
       var key = data.key;
-      var text = dataObj.entities[0].name || '';
+      var text = dataObj.sentences[0].text.content || '';
       var sent = dataObj.documentSentiment.score;
       var tsRaw = new Date(dataObj.timestamp);
       var ts = timeStamp(tsRaw);
       var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
       containerElement.insertBefore(
-        createPostElement(key,"comment @ " + ts, text +" "+ sent, author,1, data.val().authorPic),
+        createPostElement(key,author, text +" "+ sent, author,1, data.val().authorPic),
         containerElement.firstChild);
     });
     postsRef.on('child_changed', function(data) {
