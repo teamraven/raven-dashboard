@@ -132,15 +132,15 @@ function createPostElement(postId, title, text, score, author, authorId, authorP
     divtest.innerHTML = neutral;
     postElement.getElementsByClassName('score')[0].appendChild(divtest);
   } else if(score > 0) {
-    // for (var i = 1; i <= score*10; i++) {
+     for (var i = 1; i <= score*10; i++) {
       divtest.innerHTML = good;
       postElement.getElementsByClassName('score')[0].appendChild(divtest);
-    // }
+     }
   } else {
-    // for (var i = 1; i <= score*-10; i++) {
+     for (var i = 1; i <= score*-10; i++) {
       divtest.innerHTML = bad;
       postElement.getElementsByClassName('score')[0].appendChild(divtest);
-    // }
+     }
   };
 
     // scoreDivs.push('<div>html</div>');
