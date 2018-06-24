@@ -289,7 +289,7 @@ function startDatabaseQueries() {
   var userPostsRef = firebase.database().ref('responses/user1');
 
   var fetchPosts = function(postsRef, sectionElement) {
-  var date  = new Date("Jun 22, 2018");
+  var date  = new Date();
   postsRef = postsRef.orderByChild("timestamp").startAt(date.toString());
     postsRef.on('child_added', function(data) {
     var dataObj = data.val();
