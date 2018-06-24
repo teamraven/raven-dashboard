@@ -299,7 +299,7 @@ function startDatabaseQueries() {
       var sent = dataObj.documentSentiment.score;
       var tsRaw = new Date(dataObj.timestamp);
       var ts = timeStamp(tsRaw);
-      var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
+      var containerElement = sectionElement.getElementsByClassName('pcontent')[0];
       containerElement.insertBefore(
         createPostElement(key,author, text +" "+ sent, author,1, data.val().authorPic),
         containerElement.firstChild);
@@ -314,8 +314,8 @@ function startDatabaseQueries() {
     });
     postsRef.on('child_removed', function(data) {
       var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
-      var post = containerElement.getElementsByClassName('post-' + data.key)[0];
-      post.parentElement.removeChild(post);
+     // var post = containerElement.getElementsByClassName('post-' + data.key)[0];
+     // post.parentElement.removeChild(post);
     });
   };
 

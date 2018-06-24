@@ -116,3 +116,74 @@
 [info] i  hosting: Serving hosting files from: ./
 [info] ✔  hosting: Local server: http://localhost:5020
 
+[debug] [2018-06-24T06:13:52.780Z] ----------------------------------------------------------------------
+[debug] [2018-06-24T06:13:52.782Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-06-24T06:13:52.783Z] CLI Version:   3.19.0
+[debug] [2018-06-24T06:13:52.783Z] Platform:      darwin
+[debug] [2018-06-24T06:13:52.783Z] Node Version:  v8.2.1
+[debug] [2018-06-24T06:13:52.783Z] Time:          Sun Jun 24 2018 14:13:52 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:52.783Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-24T06:13:52.798Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-24T06:13:52.798Z] > authorizing via signed-in user
+[debug] [2018-06-24T06:13:52.800Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-06-24T06:13:52.800Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/ek3FVUQlmVVcBGllT6_XyN1Q_-UvmlpuoMW8Xt7k11M',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Jun 24 2018 14:13:52 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:52.916Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T06:13:52.932Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/raven-20655  
+  
+ Sun Jun 24 2018 14:13:52 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:53.878Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T06:13:53.879Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/raven-20655/tokens  
+  
+ Sun Jun 24 2018 14:13:53 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:54.794Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T06:13:54.795Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/raven-20655  
+  
+ Sun Jun 24 2018 14:13:54 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:56.141Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/asvin/Documents/quickstart-js-master/database'...
+[info] 
+[debug] [2018-06-24T06:13:56.143Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:56 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:56.673Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-06-24T06:13:56.695Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:56 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:57.456Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
+[debug] [2018-06-24T06:13:57.460Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:57 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:58.287Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5008 is not available. Trying another port...
+[debug] [2018-06-24T06:13:58.290Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:58 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:58.763Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5012 is not available. Trying another port...
+[debug] [2018-06-24T06:13:58.766Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:58 GMT+0800 (+08)
+[debug] [2018-06-24T06:13:59.398Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5016 is not available. Trying another port...
+[debug] [2018-06-24T06:13:59.401Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:13:59 GMT+0800 (+08)
+[debug] [2018-06-24T06:14:00.446Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5020 is not available. Trying another port...
+[debug] [2018-06-24T06:14:00.448Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:14:00 GMT+0800 (+08)
+[debug] [2018-06-24T06:14:01.054Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5024
+
