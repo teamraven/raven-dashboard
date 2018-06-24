@@ -187,3 +187,70 @@
 [info] i  hosting: Serving hosting files from: ./
 [info] ✔  hosting: Local server: http://localhost:5024
 
+[debug] [2018-06-24T06:26:40.919Z] ----------------------------------------------------------------------
+[debug] [2018-06-24T06:26:40.922Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-06-24T06:26:40.922Z] CLI Version:   3.19.0
+[debug] [2018-06-24T06:26:40.922Z] Platform:      darwin
+[debug] [2018-06-24T06:26:40.922Z] Node Version:  v8.2.1
+[debug] [2018-06-24T06:26:40.922Z] Time:          Sun Jun 24 2018 14:26:40 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:40.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-24T06:26:40.936Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-24T06:26:40.937Z] > authorizing via signed-in user
+[debug] [2018-06-24T06:26:40.939Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/raven-20655  
+  
+ Sun Jun 24 2018 14:26:40 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:42.360Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T06:26:42.361Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/raven-20655/tokens  
+  
+ Sun Jun 24 2018 14:26:42 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:43.965Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T06:26:43.966Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/raven-20655  
+  
+ Sun Jun 24 2018 14:26:43 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:45.111Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/asvin/Documents/quickstart-js-master/database'...
+[info] 
+[debug] [2018-06-24T06:26:45.113Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:45 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:45.688Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-06-24T06:26:45.705Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:45 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:46.273Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
+[debug] [2018-06-24T06:26:46.276Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:46 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:46.846Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5008 is not available. Trying another port...
+[debug] [2018-06-24T06:26:46.848Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:46 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:47.553Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5012 is not available. Trying another port...
+[debug] [2018-06-24T06:26:47.556Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:47 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:48.208Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5016 is not available. Trying another port...
+[debug] [2018-06-24T06:26:48.210Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:48 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:49.073Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5020 is not available. Trying another port...
+[debug] [2018-06-24T06:26:49.076Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:49 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:49.714Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5024 is not available. Trying another port...
+[debug] [2018-06-24T06:26:49.717Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/446034396814/clients/_:getWebAppConfig  
+  
+ Sun Jun 24 2018 14:26:49 GMT+0800 (+08)
+[debug] [2018-06-24T06:26:50.250Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5028
+

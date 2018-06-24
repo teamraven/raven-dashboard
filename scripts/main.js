@@ -269,7 +269,7 @@ function timeStamp(now) {
  */
 function deleteComment(postElement, id) {
   var comment = postElement.getElementsByClassName('comment-' + id)[0];
-  comment.parentElement.removeChild(comment);
+ // comment.parentElement.removeChild(comment);
 }
 
 /**
@@ -303,19 +303,21 @@ function startDatabaseQueries() {
       containerElement.insertBefore(
         createPostElement(key,author, text +" "+ sent, author,1, data.val().authorPic),
         containerElement.firstChild);
+        var text =0;
     });
     postsRef.on('child_changed', function(data) {
-      var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
-      var postElement = containerElement.getElementsByClassName('post-' + data.key)[0];
-      postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = data.val().title;
-      postElement.getElementsByClassName('username')[0].innerText = data.val().author;
-      postElement.getElementsByClassName('text')[0].innerText = data.val().body;
+     //  var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
+//       var postElement = containerElement.getElementsByClassName('post-' + data.key)[0];
+//       postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = data.val().title;
+//       postElement.getElementsByClassName('username')[0].innerText = data.val().author;
+//       postElement.getElementsByClassName('text')[0].innerText = data.val().body;
     //  postElement.getElementsByClassName('star-count')[0].innerText = data.val().starCount;
     });
     postsRef.on('child_removed', function(data) {
       var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
      // var post = containerElement.getElementsByClassName('post-' + data.key)[0];
-     // post.parentElement.removeChild(post);
+     // post.parentElement.
+     (post);
     });
   };
 
@@ -378,7 +380,7 @@ function onAuthStateChanged(user) {
     return;
   }
 
-  cleanupUi();
+ // cleanupUi();
   if (user) {
     currentUID = user.uid;
     splashPage.style.display = 'none';
