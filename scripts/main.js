@@ -293,6 +293,11 @@ function startDatabaseQueries() {
   var date  = new Date();
   postsRef = postsRef.orderByChild("timestamp").startAt(date.toString());
     postsRef.on('child_added', function(data) {
+      if (videoDiv.style.display === "none") {
+          videoDiv.style.display = "block";
+      } else {
+          videoDiv.style.display = "none";
+      }
     var dataObj = data.val();
       var author = "user1" || 'Anonymous';
       var key = data.key;
