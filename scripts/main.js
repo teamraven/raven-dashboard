@@ -89,12 +89,13 @@ function writeNewPost(uid, username, picture, title, body) {
 /**
  * Creates a post element.
  */
-function createPostElement(postId, title, text, author, authorId, authorPic) {
+function createPostElement(postId, title, text, score, author, authorId, authorPic) {
   var uid = firebase.auth().currentUser.uid;
 
   var html =
       
           '<div class="text"></div>' +
+          '<div class="score"></div>' +
           '<div class="comments-container"></div>' +
           '<form class="add-comment" action="#">' +
             '<div class="mdl-textfield mdl-js-textfield">' +
@@ -120,6 +121,18 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
 
   // Set values.
   postElement.getElementsByClassName('text')[0].innerText = text;
+  var scoreDivs = [];
+  console.log('score', typeof score, score*10)
+
+  var divtest= document.createElement("div");
+  if(score > 0) divtest.innerHTML = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
+  else divtest.innerHTML = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
+  for (var i = 1; i <= score*10; i++) {
+    // scoreDivs.push('<div>html</div>');
+    postElement.getElementsByClassName('score')[0].appendChild(divtest);
+  }
+  // var scoreDivsAll = scoreDivs.join('');
+  // postElement.getElementsByClassName('score')[0].appendChild;
  // postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
  // postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
 //  postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
@@ -295,9 +308,10 @@ function startDatabaseQueries() {
     postsRef.on('child_added', function(data) {
       if (videoDiv.style.display === "none") {
           videoDiv.style.display = "block";
-      } else {
-          videoDiv.style.display = "none";
       }
+      //  else {
+      //     // videoDiv.style.display = "none";
+      // }
     var dataObj = data.val();
       var author = "user1" || 'Anonymous';
       var key = data.key;
@@ -307,7 +321,7 @@ function startDatabaseQueries() {
       var ts = timeStamp(tsRaw);
       var containerElement = sectionElement.getElementsByClassName('pcontent')[0];
       containerElement.insertBefore(
-        createPostElement(key,author, text +" "+ sent, author,1, authorPic),
+        createPostElement(key,author, text, sent, author,1, authorPic),
         containerElement.firstChild);
         var text =0;
     });
