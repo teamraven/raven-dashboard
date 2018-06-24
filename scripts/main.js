@@ -95,7 +95,7 @@ function createPostElement(postId, title, text, score, author, authorId, authorP
   var html =
       
           '<div class="text"></div>' +
-          '<div class="score"></div>' +
+          '<div class="score" style="margin: 10px; display: flex;" ></div>' +
           '<div class="comments-container"></div>' +
           '<form class="add-comment" action="#">' +
             '<div class="mdl-textfield mdl-js-textfield">' +
@@ -122,25 +122,25 @@ function createPostElement(postId, title, text, score, author, authorId, authorP
   // Set values.
   postElement.getElementsByClassName('text')[0].innerText = text;
   var scoreDivs = [];
-  console.log('score', typeof score, score*10)
-
-  var divtest= document.createElement("div");
-  var good = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
-  var neutral = "<div style='width: 25px; height: 25px; background: grey; border-radius: 25px;'></div>";
-  var bad = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
-  if(score = 0) {
-    divtest.innerHTML = neutral;
-    postElement.getElementsByClassName('score')[0].appendChild(divtest);
+  console.log('score', typeof score, score*10, score > 0);
+  if(score === 0) {
+    var div_neutral = document.createElement("div");
+    div_neutral.innerHTML = "<div style='width: 25px; height: 25px; background: grey; border-radius: 25px;'></div>";
+    postElement.getElementsByClassName('score')[0].appendChild(div_neutral);
   } else if(score > 0) {
-    // for (var i = 1; i <= score*10; i++) {
-      divtest.innerHTML = good;
-      postElement.getElementsByClassName('score')[0].appendChild(divtest);
-    // }
+    for (var i = 1; i <= score*10; i++) {
+      console.log('good', score*10);
+      var div_good = document.createElement("div");
+      div_good.innerHTML = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
+      postElement.getElementsByClassName('score')[0].appendChild(div_good);
+    }
   } else {
-    // for (var i = 1; i <= score*-10; i++) {
-      divtest.innerHTML = bad;
-      postElement.getElementsByClassName('score')[0].appendChild(divtest);
-    // }
+    for (var i = 1; i <= score*-10; i++) {
+
+      var div_bad = document.createElement("div");
+      div_bad.innerHTML = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
+      postElement.getElementsByClassName('score')[0].appendChild(div_bad);
+    }
   };
 
     // scoreDivs.push('<div>html</div>');
