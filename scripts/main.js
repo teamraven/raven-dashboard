@@ -125,8 +125,16 @@ function createPostElement(postId, title, text, score, author, authorId, authorP
   console.log('score', typeof score, score*10)
 
   var divtest= document.createElement("div");
-  if(score > 0) divtest.innerHTML = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
-  else divtest.innerHTML = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
+  var good = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
+  var neutral = "<div style='width: 25px; height: 25px; background: grey; border-radius: 25px;'></div>";
+  var bad = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
+  if(score = 0) divtest.innerHTML = neutral;
+  else if(score > 0) {
+    divtest.innerHTML = good;
+  } else {
+    divtest.innerHTML = bad;
+  };
+
   for (var i = 1; i <= score*10; i++) {
     // scoreDivs.push('<div>html</div>');
     postElement.getElementsByClassName('score')[0].appendChild(divtest);
