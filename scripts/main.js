@@ -122,8 +122,8 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
   postElement.getElementsByClassName('text')[0].innerText = text;
  // postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
  // postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
- // postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
-    //  (authorPic || './silhouette.jpg') + '")';
+ postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
+     (authorPic || './silhouette.jpg') + '")';
 
   // Listen for comments.
   // [START child_event_listener_recycler]
@@ -289,7 +289,7 @@ function startDatabaseQueries() {
   // [END recent_posts_query]
   var userPostsRef = firebase.database().ref('responses/user1');
 
-  var fetchPosts = function(postsRef, sectionElement) {
+  var fetchPosts = function(postsRef, sectionElement, i, authorPic) {
   var date  = new Date();
   postsRef = postsRef.orderByChild("timestamp").startAt(date.toString());
     postsRef.on('child_added', function(data) {
@@ -307,7 +307,7 @@ function startDatabaseQueries() {
       var ts = timeStamp(tsRaw);
       var containerElement = sectionElement.getElementsByClassName('pcontent')[0];
       containerElement.insertBefore(
-        createPostElement(key,author, text +" "+ sent, author,1, data.val().authorPic),
+        createPostElement(key,author, text +" "+ sent, author,1, authorPic),
         containerElement.firstChild);
         var text =0;
     });
@@ -329,9 +329,9 @@ function startDatabaseQueries() {
 
   // Fetching and displaying all posts of each sections.
  // fetchPosts(topUserPostsRef, topUserPostsSection);
-  fetchPosts(recentPostsRef, recentPostsSection);
-  fetchPosts(recentPostsRef2, recentPostsSection2);
-  fetchPosts(recentPostsRef3, recentPostsSection3);
+  fetchPosts(recentPostsRef, recentPostsSection, 1, 'https://teamraven.github.io/raven/images/david.jpeg');
+  fetchPosts(recentPostsRef2, recentPostsSection2, 2, 'https://teamraven.github.io/raven/images/nelson.jpeg');
+  fetchPosts(recentPostsRef3, recentPostsSection3, 3, 'https://teamraven.github.io/raven/images/narmeet.jpeg');
  // fetchPosts(userPostsRef, userPostsSection);
 
   // Keep track of all Firebase refs we are listening to.
