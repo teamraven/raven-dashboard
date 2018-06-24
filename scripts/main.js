@@ -128,17 +128,22 @@ function createPostElement(postId, title, text, score, author, authorId, authorP
   var good = "<div style='width: 25px; height: 25px; background: #1a9887; border-radius: 25px;'></div>";
   var neutral = "<div style='width: 25px; height: 25px; background: grey; border-radius: 25px;'></div>";
   var bad = "<div style='width: 25px; height: 25px; background: #ec5500; border-radius: 25px;'></div>";
-  if(score = 0) divtest.innerHTML = neutral;
-  else if(score > 0) {
-    divtest.innerHTML = good;
+  if(score = 0) {
+    divtest.innerHTML = neutral;
+    postElement.getElementsByClassName('score')[0].appendChild(divtest);
+  } else if(score > 0) {
+    // for (var i = 1; i <= score*10; i++) {
+      divtest.innerHTML = good;
+      postElement.getElementsByClassName('score')[0].appendChild(divtest);
+    // }
   } else {
-    divtest.innerHTML = bad;
+    // for (var i = 1; i <= score*-10; i++) {
+      divtest.innerHTML = bad;
+      postElement.getElementsByClassName('score')[0].appendChild(divtest);
+    // }
   };
 
-  for (var i = 1; i <= score*10; i++) {
     // scoreDivs.push('<div>html</div>');
-    postElement.getElementsByClassName('score')[0].appendChild(divtest);
-  }
   // var scoreDivsAll = scoreDivs.join('');
   // postElement.getElementsByClassName('score')[0].appendChild;
  // postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
