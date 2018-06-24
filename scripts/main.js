@@ -122,8 +122,8 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
   postElement.getElementsByClassName('text')[0].innerText = text;
  // postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
  // postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
- postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
-     (authorPic || './silhouette.jpg') + '")';
+//  postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
+//      (authorPic || './silhouette.jpg') + '")';
 
   // Listen for comments.
   // [START child_event_listener_recycler]
