@@ -116,7 +116,7 @@ h3 {
     display: inline-block;
     line-height: 38px;
     vertical-align: top;
-    width: calc(100% - 46px);
+    
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
