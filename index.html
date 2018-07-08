@@ -210,13 +210,20 @@
       </video>
 </div>
 
-<!-- Import and configure the Firebase SDK -->
-<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-<!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-<script src="/__/firebase/5.0.0/firebase-app.js"></script>
-<script src="/__/firebase/5.0.0/firebase-auth.js"></script>
-<script src="/__/firebase/5.0.0/firebase-database.js"></script>
-<script src="/__/firebase/init.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRFPNu6qMZY4sBou7ekFzecKfqBduHww0",
+    authDomain: "raven-20655.firebaseapp.com",
+    databaseURL: "https://raven-20655.firebaseio.com",
+    projectId: "raven-20655",
+    storageBucket: "raven-20655.appspot.com",
+    messagingSenderId: "446034396814"
+  };
+  firebase.initializeApp(config);
+</script>
 
 <script src="scripts/main.js"></script>
 </body>
